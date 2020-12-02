@@ -1,0 +1,52 @@
+:root{
+    --solarized-base-03: #002b36;
+    --solarized-base-02: #073642;
+    --solarized-base-01: #586e75;
+    --solarized-base-00: #657b83;
+    --solarized-base-0 : #839496;
+    --solarized-base-1 : #93a1a1;
+    --solarized-base-2 : #eee8d5;
+    --solarized-base-3 : #fdf6e3;
+
+    --solarized-yellow : #b58800;
+    --solarized-orange : #cb4b16;
+    --solarized-red    : #dc322f;
+    --solarized-magenta: #d33682;
+    --solarized-violet : #6c71c4;
+    --solarized-blue   : #268bd2;
+    --solarized-cyan   : #2aa198;
+    --solarized-green  : #859900;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #1b1b1b;
+}
+
+body{
+    font-family: 'Major Mono Display',monospace;
+}
+
+.pomo{
+    outline: none;
+    border: none;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1b1b1b;
+    color: #1bb11b;
+    text-align: center;
+    font-family: 'Major Mono Display',monospace;
+    font-size: 200px;
+    transition: 0.5s;
+}
+
+.pomo:hover{
+    background-color:#1bb11b;
+}
