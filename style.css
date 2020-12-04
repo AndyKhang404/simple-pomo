@@ -33,7 +33,7 @@ body{
     font-family: 'Major Mono Display',monospace;
 }
 
-.pomo{
+#pomo{
     outline: none;
     border: none;
     margin: 0;
@@ -43,10 +43,8 @@ body{
     color: #1bb11b;
     text-align: center;
     font-family: 'Major Mono Display',monospace;
-    font-size: 200px;
+    font-size: 100px;
+    font-weight: 400;
     transition: 0.5s;
-}
-
-.pomo:hover{
-    background-color:#1bb11b;
+    pointer-events: auto;
 }
