@@ -33,18 +33,27 @@ body{
     font-family: 'Major Mono Display',monospace;
 }
 
-#pomo{
+#btn-pomo{
     outline: none;
     border: none;
     margin: 0;
     width: 100%;
     height: 100%;
     background-color: #1b1b1b;
-    color: #1bb11b;
-    text-align: center;
+    color: #b11b1b;
     font-family: 'Major Mono Display',monospace;
-    font-size: 100px;
-    font-weight: 400;
-    transition: 0.5s;
+    transition: all 0.2s;
     pointer-events: auto;
+}
+
+#pomo{
+    text-align: center;
+    font-size: 8vw;
+    font-weight: 400;
+}
+
+#indicator{
+    margin-top: 8vh;
+    font-size: 2vw;
+    font-weight: 200;
 }
