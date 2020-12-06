@@ -2,10 +2,12 @@ var s = 10;
 var m = 25;
 var h = 00;
 var isRunning = false;
-var btn_pomo, pomo, indicator, timer, clickAudio;
+var btn_pomo, pomo, indicator, timer, startAudio, pauseAudio;
 
 window.addEventListener("load", () => {
-  clickAudio = document.getElementById("click");
+  startAudio = document.getElementById("startAudio");
+  pauseAudio = document.getElementById("pauseAudio");
+
   btn_pomo = document.getElementById("btn-pomo");
   pomo = document.getElementById("pomo");
   indicator = document.getElementById("indicator");
@@ -17,7 +19,7 @@ function start() {
     pause();
     isRunning = false;
   } else {
-    clickAudio.play();
+    startAudio.play();
     indicator.innerHTML = "keep working";
     btn_pomo.style.color = "#1ba11b";
     isRunning = true;
@@ -42,7 +44,7 @@ function start() {
 }
 
 function pause() {
-  clickAudio.play();
+  pauseAudio.play();
   btn_pomo.style.color = "#a11b1b";
   indicator.innerHTML = "interrupted!";
   if (timer) clearInterval(timer);
