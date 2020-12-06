@@ -37,7 +37,7 @@ function start() {
         clearInterval(timer);
         pomo.innerHTML = convert(0,0,0);
       } else pomo.innerHTML = convert(h, m, s);
-    }, 1);
+    }, 1000);
   }
 }
 
