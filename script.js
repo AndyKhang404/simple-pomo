@@ -6,7 +6,7 @@ var defaultConfig = {
 };
 var config = defaultConfig;
 var isRunning = false;
-var btn_pomo, pomo, indicator, timer, sequencePos = 0;
+var pomo_btn, pomo_timer, pomo_indicator, timer, sequencePos = 0;
 var s,m,h;
 var startAudio, pauseAudio;
 
@@ -14,23 +14,24 @@ window.addEventListener("load", () => {
   startAudio = document.getElementById("startAudio");
   pauseAudio = document.getElementById("pauseAudio");
 
-  btn_pomo = document.getElementById("btn-pomo");
-  pomo = document.getElementById("pomo");
-  indicator = document.getElementById("indicator");
-  pomo.innerHTML = convert(h, m, s);
+  pomo_btn = document.getElementById("pomo-btn");
+  pomo_timer = document.getElementById("pomo-timer");
+  pomo_indicator = document.getElementById("pomo-indicator");
+  s = config[config.sequence[sequencePos]].s;
+  m = config[config.sequence[sequencePos]].m;
+  h = config[config.sequence[sequencePos]].h;
+  pomo_timer.innerHTML = convert(h, m, s);
 });
 
 function start() {
   if (isRunning) {
-    pause();
+    interruptPause();
     isRunning = false;
   } else {
-    s = config[config.sequence[sequencePos]].s;
-    m = config[config.sequence[sequencePos]].m;
-    h = config[config.sequence[sequencePos]].h;
+    
     startAudio.play();
-    indicator.innerHTML = "keep working";
-    btn_pomo.style.color = "#1ba11b";
+    pomo_indicator.innerHTML = config[config.sequence[sequencePos]].name;
+    pomo_btn.style.color = "#1ba11b";
     isRunning = true;
 
     timer = setInterval(() => {
@@ -46,17 +47,25 @@ function start() {
       }
       if (h < 0) {
         clearInterval(timer);
-        pomo.innerHTML = convert(0,0,0);
-      } else pomo.innerHTML = convert(h, m, s);
+        sequencePos = sequencePos <= config.sequence.length ? sequencePos+1 : 0;
+        s = config[config.sequence[sequencePos]].s;
+        m = config[config.sequence[sequencePos]].m;
+        h = config[config.sequence[sequencePos]].h;
+        pomo_timer.innerHTML = convert(0,0,0);
+      } else pomo_timer.innerHTML = convert(h, m, s);
     }, 1000);
   }
 }
 
-function pause() {
+function interruptPause() {
   pauseAudio.play();
-  btn_pomo.style.color = "#a11b1b";
-  indicator.innerHTML = "interrupted!";
+  pomo_btn.style.color = "#a11b1b";
+  pomo_indicator.innerHTML = "interrupted!";
   if (timer) clearInterval(timer);
+}
+
+function sequencePause() {
+  
 }
 
 function convert(h, m, s) {
