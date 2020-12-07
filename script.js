@@ -1,8 +1,14 @@
-var s = 10;
-var m = 25;
-var h = 00;
+var defaultConfig = {
+  '1':{ s:0, m:25, h:0, name:'work'},
+  '2':{ s:0, m:5, h:0, name:'short-break'},
+  '3':{ s:0, m:15, h:0, name:'long-break'},
+  sequence:[1,2,1,1],
+};
+var config = defaultConfig;
 var isRunning = false;
-var btn_pomo, pomo, indicator, timer, startAudio, pauseAudio;
+var btn_pomo, pomo, indicator, timer, sequencePos = 0;
+var s,m,h;
+var startAudio, pauseAudio;
 
 window.addEventListener("load", () => {
   startAudio = document.getElementById("startAudio");
@@ -19,6 +25,9 @@ function start() {
     pause();
     isRunning = false;
   } else {
+    s = config[config.sequence[sequencePos]].s;
+    m = config[config.sequence[sequencePos]].m;
+    h = config[config.sequence[sequencePos]].h;
     startAudio.play();
     indicator.innerHTML = "keep working";
     btn_pomo.style.color = "#1ba11b";
