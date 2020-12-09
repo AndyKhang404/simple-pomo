@@ -13,7 +13,7 @@ body{
     font-family: 'Major Mono Display',monospace;
 }
 
-#btn-pomo{
+#pomo-btn{
     outline: none;
     border: none;
     margin: 0;
@@ -26,14 +26,14 @@ body{
     pointer-events: auto;
 }
 
-#pomo{
+#pomo-timer{
     font-family: 'Lato';
     text-align: center;
     font-size: 6rem;
     font-weight: 400;
 }
 
-#indicator{
+#pomo-indicator{
     margin-top: 8vh;
     font-size: 2vw;
     font-weight: 300;
