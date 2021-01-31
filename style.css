@@ -29,12 +29,33 @@ body{
 #pomo-timer{
     font-family: 'Lato';
     text-align: center;
-    font-size: 6rem;
+    font-size: 175px;
     font-weight: 400;
 }
 
 #pomo-indicator{
-    margin-top: 8vh;
-    font-size: 2vw;
+    margin-top: 12vh;
+    font-size: 50px;
     font-weight: 300;
+}
+
+@media screen and (max-width: 800px) {
+    #pomo-timer{
+        font-family: 'Lato';
+        text-align: center;
+        font-size: 22vw;
+        font-weight: 400;
+    }
+    
+    #pomo-indicator{
+        margin-top: 8vh;
+        font-size: 6vw;
+        font-weight: 300;
+    }
+}
+
+@media screen and (max-height: 350px) {
+    #pomo-indicator{
+        display: none;
+    }
 }

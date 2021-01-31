@@ -1,2 +1,2 @@
 # simple-pomo
-A simple, eye-candying pomodoro web app written with pure html,css and javascript
+A simple, somewhat responsive pomodoro web app written with pure html,css and javascript
