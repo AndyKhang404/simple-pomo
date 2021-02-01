@@ -1,8 +1,8 @@
 var config = {
-  1:{ s:10, m:0, name:'Work'},
-  2:{ s:0, m:5, name:'Short break'},
-  3:{ s:0, m:1, name:'Long break'},
-  sequence:[1,2,1,2,1,2,1,3],
+  1:{s:0,m:25,name: "Work" },
+  2:{s:0,m:5,name: "Short break" },
+  3:{s:0,m:15,name: "Long break" },
+  sequence: [1, 2, 1, 2, 1, 2, 1, 3]
 };
 var isRunning = false;
 var pomo_btn, pomo_timer, pomo_indicator, pomo_title, timer, sequencePos = 0;
