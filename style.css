@@ -22,7 +22,7 @@ body{
     background-color: #1b1b1b;
     color: #a11b1b;
     font-family: 'Spartan';
-    transition: all 0.2s;
+    transition: color 0.1s;
     pointer-events: auto;
 }
 
@@ -39,22 +39,23 @@ body{
     font-weight: 300;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 860px) {
     #pomo-timer{
-        font-family: 'Lato';
-        text-align: center;
         font-size: 22vw;
-        font-weight: 400;
     }
     
     #pomo-indicator{
-        margin-top: 8vh;
         font-size: 6vw;
-        font-weight: 300;
     }
 }
 
-@media screen and (max-height: 350px) {
+@media screen and (max-width: 500px) {
+    #pomo-indicator{
+        display: none;
+    }
+}
+
+@media screen and (max-height: 400px) {
     #pomo-indicator{
         display: none;
     }
